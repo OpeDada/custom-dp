@@ -9,7 +9,7 @@
 }
 
 h1 {
-  font-size:xx-large;
+  font-size: xx-large;
   text-align: center;
   padding-bottom: 16px;
 }
@@ -26,6 +26,35 @@ h1 {
 img {
   border: none;
   max-width: 100%;
+  position:relative;
+  z-index:-1;
+  top: 25px;
+  left: 25px;
+}
+
+/* .imgA {
+  z-index: 5;
+}
+.imgB {
+  z-index: 3;
+} */
+
+
+.parentImage {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+   z-index: 5;
+}
+.image2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 #textArea {
@@ -35,18 +64,14 @@ img {
 
 #theText {
   position: absolute;
-  top: 90px;
-  left: 0;
-  background: #000;
-  background: rgba(0, 0, 0, 0.1);
+  bottom: 120px;
+  left: 200px;
+  z-index: 10;
+  background: rgba(8, 8, 8, 0.1);
   color: #fff;
-  width: auto;
   padding: 5px;
-  text-align: left;
   border: dashed 2px #ff7f27;
   font: 15px Calibri;
-  display: block;
-  cursor: move;
 }
 
 canvas {
