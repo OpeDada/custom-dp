@@ -1,11 +1,12 @@
-let dragging = () => { (document).ready(function () {
-  (function () {
-    ("#theText").draggable({
-      containment: "parent", // set draggable area. Ref: https://www.encodedna.com/jquery/limit-the-draggable-area-using-jquery-ui.htm
+let dragging = () => {
+  document.ready(function () {
+    (function () {
+      "#theText".draggable({
+        containment: "parent", // set draggable area. Ref: https://www.encodedna.com/jquery/limit-the-draggable-area-using-jquery-ui.htm
+      });
     });
   });
-})
-}
+};
 
 // Select image and show it.
 let chooseImage = () => {

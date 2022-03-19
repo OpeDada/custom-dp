@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 * {
   font: 17px Calibri;
 }
@@ -32,13 +34,6 @@ img {
   left: 25px;
 }
 
-/* .imgA {
-  z-index: 5;
-}
-.imgB {
-  z-index: 3;
-} */
-
 
 .parentImage {
   position: relative;
@@ -49,7 +44,7 @@ img {
   position: relative;
   top: 0;
   left: 0;
-   z-index: 5;
+  z-index: 5;
 }
 .image2 {
   position: absolute;
@@ -63,15 +58,16 @@ img {
 }
 
 #theText {
-  position: absolute;
+  text-align: center;
+  position: relative;
   bottom: 120px;
-  left: 200px;
+  left: 0px;
   z-index: 10;
   background: rgba(8, 8, 8, 0.1);
-  color: #fff;
+  color: #C8FEE6;
   padding: 5px;
   border: dashed 2px #ff7f27;
-  font: 15px Calibri;
+  font: 20px Montserrat;
 }
 
 canvas {
