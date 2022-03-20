@@ -128,7 +128,7 @@ let saveImageWithText = () => {
 
     console.log("Font: ", fnt);
 
-    fnt = fnt.replace("20px", "40px");
+    fnt = fnt.replace("20px", "38px");
 
     // Assign text properties to the context.
     ctx.font = fnt;
