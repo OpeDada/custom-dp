@@ -41,7 +41,7 @@ img {
   left: 0;
 }
 .image1 {
-  /* position: relative; */
+  position: relative;
   top: 0;
   left: 0;
   z-index: 5;
@@ -60,8 +60,8 @@ img {
 #theText {
   text-align: center;
   position: relative;
-  bottom: 120px;
-  left: 0px;
+  bottom: 140px;
+  left: 0x;
   z-index: 10;
   background: rgba(8, 8, 8, 0.1);
   color: #C8FEE6;
