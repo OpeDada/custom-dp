@@ -33,7 +33,7 @@ let showImage = (fl) => {
           document.getElementById("theText").style.display = "none";
           document.getElementById("bt").style.display = "none";
           document.getElementById("textArea").style.display = "none";
-          document.getElementById("myimage").src = "";
+          document.getElementById("image2").src = "";
         } else {
           document.getElementById("theText").style.display = "block";
           document.getElementById("bt").style.display = "block";
@@ -42,7 +42,7 @@ let showImage = (fl) => {
       };
 
       img.src = e.target.result; // actual image.
-      document.getElementById("myimage").src = reader.result; // Add the image on the form.
+      document.getElementById("image2").src = reader.result; // Add the image on the form.
     };
     reader.readAsDataURL(fl.files[0]);
   }
@@ -64,16 +64,22 @@ let saveImageWithText = () => {
   textContainer = document.getElementById("theText"); // The element with the text.
 
   // Create an image object.
-  let img = new Image();
-  img.src = document.getElementById("myimage").src;
+  let img1 = new Image();
+  img1.src = document.getElementById("image1").src;
+  let img2 = new Image();
+  img2.src = document.getElementById("image2").src;
 
   // Create a canvas object.
-  let canvas = document.createElement("canvas");
+  let canvas = document.getElementById("canvas");
 
   // Wait till the image is loaded.
-  img.onload = function () {
+  img1.onload = function () {
     drawImage();
-    downloadImage(img.src.replace(/^.*[\\\/]/, "")); // Download the processed image.
+    // downloadImage(img1.src.replace(/^.*[\\\/]/, "")); // Download the processed image.
+  };
+  img2.onload = function () {
+    drawImage();
+    downloadImage(img2.src.replace(/^.*[\\\/]/, "")); // Download the processed image.
   };
 
   // Draw the image on the canvas.
@@ -81,11 +87,12 @@ let saveImageWithText = () => {
     let ctx = canvas.getContext("2d"); // Create canvas context.
 
     // Assign width and height.
-    canvas.width = img.width;
-    canvas.height = img.height;
+    canvas.width = img1.width;
+    canvas.height = img1.height;
 
     // Draw the image.
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img1, 0, 0);
+    ctx.drawImage(img2, 0, 0);
 
     textContainer.style.border = 0;
 
@@ -139,7 +146,7 @@ let saveImageWithText = () => {
       );
     }
 
-    // document.body.append(canvas);  // Show the image with the text on the Canvas.
+    // document.body.append(canvas); // Show the image with the text on the Canvas.
   };
 
   // Download the processed image.
