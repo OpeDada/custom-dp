@@ -48,13 +48,15 @@
           <!--The default image. You can select a different image too.-->
 
           <div class="parentImage">
-            <img class="image1" src="picture.png" alt="" />
-            <img class="image2" src="ms.jpeg" id="myimage" alt="" width="900" />
+            <img class="image1" src="picture.png" alt="" id="image1"/>
+            <img class="image2" src="ms.jpeg" alt="" width="900" id="image2" />
           </div>
+
 
           <!--The text, which is also draggable.-->
           <div
             id="theText"
+            onmousedown='this.style.border = "dashed 2px #FF7F27";'
           >
             sample text
           </div>
@@ -71,6 +73,7 @@
         </p>
       </div>
     </div>
+    <canvas id="canvas"></canvas>
     <script src="profile.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
