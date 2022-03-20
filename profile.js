@@ -1,12 +1,12 @@
-let dragging = () => {
-  document.ready(function () {
-    (function () {
-      "#theText".draggable({
-        containment: "parent", // set draggable area. Ref: https://www.encodedna.com/jquery/limit-the-draggable-area-using-jquery-ui.htm
-      });
-    });
-  });
-};
+// let dragging = () => {
+//   document.ready(function () {
+//     (function () {
+//       "#theText".draggable({
+//         containment: "parent", // set draggable area. Ref: https://www.encodedna.com/jquery/limit-the-draggable-area-using-jquery-ui.htm
+//       });
+//     });
+//   });
+// };
 
 // Select image and show it.
 let chooseImage = () => {
@@ -67,16 +67,15 @@ let saveImageWithText = () => {
   let img1 = new Image();
   img1.src = document.getElementById("image1").src;
   let img2 = new Image();
-  img2.src = document.getElementById("image2").src;
 
   // Create a canvas object.
   let canvas = document.getElementById("canvas");
 
   // Wait till the image is loaded.
   img1.onload = function () {
-    drawImage();
-    // downloadImage(img1.src.replace(/^.*[\\\/]/, "")); // Download the processed image.
+    img2.src = document.getElementById("image2").src;
   };
+
   img2.onload = function () {
     drawImage();
     downloadImage(img2.src.replace(/^.*[\\\/]/, "")); // Download the processed image.
@@ -87,12 +86,22 @@ let saveImageWithText = () => {
     let ctx = canvas.getContext("2d"); // Create canvas context.
 
     // Assign width and height.
-    canvas.width = img1.width;
-    canvas.height = img1.height;
+    canvas.width = 900;
+    canvas.height = 900;
 
     // Draw the image.
+    ctx.drawImage(
+      img2,
+      0,
+      0,
+      img2.width,
+      img2.height,
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
     ctx.drawImage(img1, 0, 0);
-    ctx.drawImage(img2, 0, 0);
 
     textContainer.style.border = 0;
 
@@ -112,10 +121,14 @@ let saveImageWithText = () => {
       .getComputedStyle(textContainer)
       .paddingRight.replace("px", "");
 
-    // Get text alignement, colour and font of the text.
+    // Get text alignment, colour and font of the text.
     let txtAlign = window.getComputedStyle(textContainer).textAlign;
     let color = window.getComputedStyle(textContainer).color;
     let fnt = window.getComputedStyle(textContainer).font;
+
+    console.log("Font: ", fnt);
+
+    fnt = fnt.replace("20px", "40px");
 
     // Assign text properties to the context.
     ctx.font = fnt;
@@ -134,6 +147,8 @@ let saveImageWithText = () => {
       x = center + left;
     }
 
+    console.log("x: ", x);
+
     // Get the text (it can a word or a sentence) to write over the image.
     let str = t.replace(/\n\r?/g, "<br />").split("<br />");
 
@@ -141,8 +156,9 @@ let saveImageWithText = () => {
     for (let i = 0; i <= str.length - 1; i++) {
       ctx.fillText(
         str[i].replace("</div>", "").replace("<br>", "").replace(";", ""),
-        x,
-        parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + i * 15
+        canvas.width / 2,
+        // parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + i * 15
+        900 - 168
       );
     }
 
