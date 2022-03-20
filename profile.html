@@ -30,17 +30,9 @@
         onchange="showImage(this)"
         style="display: none; visibility: hidden; width: 1px"
       />
-
       <!--Textarea to enter some texts.-->
       <p>
-        <textarea
-          onkeyup="writeText(this)"
-          id="textArea"
-          placeholder="Enter some value for text"
-          rows="2"
-          cols="55"
-        >
-        </textarea>
+        <input type="text" id="textArea" onkeyup="writeText(this)" placeholder="Enter your name" />
       </p>
       <div>
         <!--The image and container for text (to place over the image)-->
@@ -48,18 +40,19 @@
           <!--The default image. You can select a different image too.-->
 
           <div class="parentImage">
-            <img class="image1" src="picture.png" alt="" id="image1"/>
+            <img
+              class="image1"
+              src="picture.png"
+              alt=""
+              width="900"
+              id="image1"
+            />
             <img class="image2" src="ms.jpeg" alt="" width="900" id="image2" />
           </div>
 
-
           <!--The text, which is also draggable.-->
-          <div
-            id="theText"
-            onmousedown='this.style.border = "dashed 2px #FF7F27";'
-          >
-            sample text
-          </div>
+
+          <p id="theText">sample text</p>
         </div>
 
         <!--Button to save the image with the text.-->
