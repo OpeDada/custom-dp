@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 
 * {
-  font: 17px Calibri;
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 .parentContainer {
@@ -11,41 +13,55 @@
 }
 
 h1 {
-  font-size: xx-large;
+  font-size: 30px;
   text-align: center;
   padding-bottom: 16px;
 }
 
-/* .mainContainer {
-  position: relative;
-  padding: 0;
-  min-width: 250px;
-  min-height: 250px;
+.instruction {
+  margin-bottom: 3rem;
+}
+
+.buttons {
+  background-color: #04a759;
+  width: 15rem;
+  border-radius: 4px;
+  padding: 0.5rem;
   display: inline-block;
-  margin: 0 auto;
-} */
+  border: 4px double #cccccc;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  color: #000;
+  background-color: #c8fee6;
+}
 
 img {
   border: none;
   max-width: 100%;
-  position:relative;
-  z-index:-1;
+  position: relative;
+  z-index: -1;
   top: 25px;
   left: 25px;
 }
-
 
 .parentImage {
   position: relative;
   top: 0;
   left: 0;
 }
+
 .image1 {
   position: relative;
   top: 0;
   left: 0;
   z-index: 5;
 }
+
 .image2 {
   position: absolute;
   top: 0px;
@@ -55,21 +71,39 @@ img {
 #textArea {
   display: block;
   padding: 10px 5px;
+  width: 14.1rem;
+  text-align: center;
+  margin : 0 auto;
+  border: 1px solid #04a759;
 }
+
 
 #theText {
   text-align: center;
   position: relative;
-  bottom: 140px;
+  bottom: 120px;
   left: 0x;
   z-index: 10;
   background: rgba(8, 8, 8, 0.1);
-  color: #C8FEE6;
+  color: #c8fee6;
   padding: 5px;
-  border: dashed 2px #ff7f27;
+  margin: 0;
+  /* border: dashed 2px #ff7f27; */
   font: 20px Montserrat;
 }
 
 canvas {
   max-width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .parentContainer {
+    width: 95%;
+  }
+
+  #theText {
+    position: relative;
+    bottom: 93px;
+    left: 0x;
+  }
 }
