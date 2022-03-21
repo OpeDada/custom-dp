@@ -34,10 +34,8 @@ h1 {
   width: 15rem;
   border-radius: 4px;
   padding: 0.5rem;
-  display: inline-block;
   border: 4px double #cccccc;
   color: #fff;
-  text-align: center;
   transition: all 0.3s;
   cursor: pointer;
 }
