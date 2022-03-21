@@ -1,10 +1,3 @@
-// Create a canvas object.
-let canvas = document.createElement("canvas");
-
-// Assign width and height.
-canvas.width = 2400;
-canvas.height = 2400;
-
 // Select image and show it.
 let chooseImage = () => {
   document.getElementById("file").click();
@@ -18,19 +11,8 @@ let showImage = (fl) => {
       let img = new Image();
 
       img.onload = function () {
-        if (this.width > canvas.width || this.height > canvas.height) {
-          alert(
-            "Please select a small image. The image width and height should be less than the screen width and height."
-          );
-
-          document.getElementById("theText").style.display = "none";
-          document.getElementById("bt").style.display = "none";
-          document.getElementById("textArea").style.display = "none";
-          document.getElementById("image2").src = "";
-        } else {
-          document.getElementById("theText").style.display = "block";
-          document.getElementById("textArea").style.display = "block";
-        }
+        document.getElementById("theText").style.display = "block";
+        document.getElementById("textArea").style.display = "block";
       };
 
       img.src = e.target.result; // actual image.
@@ -61,7 +43,7 @@ let saveImageWithText = () => {
   let img2 = new Image();
 
   // Create a canvas object.
-  // let canvas = document.createElement("canvas");
+  let canvas = document.createElement("canvas");
 
   // Wait till the image is loaded.
   img1.onload = function () {
@@ -78,8 +60,8 @@ let saveImageWithText = () => {
     let ctx = canvas.getContext("2d"); // Create canvas context.
 
     // Assign width and height.
-    // canvas.width = 2400;
-    // canvas.height = 2400;
+    canvas.width = 2400;
+    canvas.height = 2400;
 
     // Draw the image.
     ctx.drawImage(
@@ -161,5 +143,4 @@ let saveImageWithText = () => {
     document.body.appendChild(a);
     a.click();
   };
-
 };
