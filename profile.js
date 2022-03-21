@@ -11,20 +11,8 @@ let showImage = (fl) => {
       let img = new Image();
 
       img.onload = function () {
-        if (this.width > screen.width || this.height > screen.height) {
-          alert(
-            "Please select a small image. The image width and height should be less than the screen width and height."
-          );
-
-          document.getElementById("theText").style.display = "none";
-          document.getElementById("bt").style.display = "none";
-          document.getElementById("textArea").style.display = "none";
-          document.getElementById("image2").src = "";
-        } else {
           document.getElementById("theText").style.display = "block";
-          document.getElementById("bt").style.display = "block";
           document.getElementById("textArea").style.display = "block";
-        }
       };
 
       img.src = e.target.result; // actual image.
@@ -55,7 +43,7 @@ let saveImageWithText = () => {
   let img2 = new Image();
 
   // Create a canvas object.
-  let canvas = document.getElementById("canvas");
+  let canvas = document.createElement("canvas");
 
   // Wait till the image is loaded.
   img1.onload = function () {
@@ -72,8 +60,8 @@ let saveImageWithText = () => {
     let ctx = canvas.getContext("2d"); // Create canvas context.
 
     // Assign width and height.
-    canvas.width = 900;
-    canvas.height = 900;
+    canvas.width = 2400;
+    canvas.height = 2400;
 
     // Draw the image.
     ctx.drawImage(
@@ -112,7 +100,7 @@ let saveImageWithText = () => {
     let color = window.getComputedStyle(textContainer).color;
     let fnt = window.getComputedStyle(textContainer).font;
 
-    fnt = fnt.replace("20px", "38px");
+    fnt = fnt.replace("20px", "95px");
 
     // Assign text properties to the context.
     ctx.font = fnt;
@@ -140,7 +128,7 @@ let saveImageWithText = () => {
         str[i].replace("</div>", "").replace("<br>", "").replace(";", ""),
         canvas.width / 2,
         // parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + i * 15
-        900 - 168
+        2400 - 440
       );
     }
 
