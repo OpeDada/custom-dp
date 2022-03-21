@@ -1,13 +1,3 @@
-// let dragging = () => {
-//   document.ready(function () {
-//     (function () {
-//       "#theText".draggable({
-//         containment: "parent", // set draggable area. Ref: https://www.encodedna.com/jquery/limit-the-draggable-area-using-jquery-ui.htm
-//       });
-//     });
-//   });
-// };
-
 // Select image and show it.
 let chooseImage = () => {
   document.getElementById("file").click();
@@ -22,10 +12,6 @@ let showImage = (fl) => {
 
       img.onload = function () {
         if (this.width > screen.width || this.height > screen.height) {
-          // console.log(this.width)
-          // console.log(this.height)
-          // console.log(screen.width)
-          // console.log(screen.height)
           alert(
             "Please select a small image. The image width and height should be less than the screen width and height."
           );
@@ -126,8 +112,6 @@ let saveImageWithText = () => {
     let color = window.getComputedStyle(textContainer).color;
     let fnt = window.getComputedStyle(textContainer).font;
 
-    console.log("Font: ", fnt);
-
     fnt = fnt.replace("20px", "38px");
 
     // Assign text properties to the context.
@@ -146,8 +130,6 @@ let saveImageWithText = () => {
     if (txtAlign === "center") {
       x = center + left;
     }
-
-    console.log("x: ", x);
 
     // Get the text (it can a word or a sentence) to write over the image.
     let str = t.replace(/\n\r?/g, "<br />").split("<br />");
