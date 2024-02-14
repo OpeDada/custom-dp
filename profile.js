@@ -128,7 +128,7 @@ let saveImageWithText = () => {
         str[i].replace("</div>", "").replace("<br>", "").replace(";", ""),
         canvas.width / 2,
         // parseInt(paddingTop, 10) + parseInt(top, 10) + 10 + i * 15
-        canvas.height - 440
+        canvas.height - 602
       );
     }
 
