@@ -107,7 +107,8 @@ canvas {
 
   #theText {
     position: relative;
-    bottom: 93px;
+    bottom: 125px;
     left: 0px;
+    font-size: 16px;
   }
 }
